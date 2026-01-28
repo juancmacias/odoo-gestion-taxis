@@ -1,0 +1,55 @@
+
+<odoo>
+    <menuitem id="menu_taxi_root" name="Gestión Taxis"/>
+
+    <record id="action_viajes" model="ir.actions.act_window">
+        <field name="name">Viajes</field>
+        <field name="res_model">taxi.viaje</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_viajes" parent="menu_taxi_root" name="Viajes" action="action_viajes"/>
+
+    <record id="view_viaje_tree" model="ir.ui.view">
+        <field name="model">taxi.viaje</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="conductor_id"/>
+                <field name="origen"/>
+                <field name="destino"/>
+                <field name="precio"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_viaje_form" model="ir.ui.view">
+        <field name="model">taxi.viaje</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="estado" widget="statusbar" statusbar_visible="pendiente,en_progreso,completado"/>
+                    <button name="action_iniciar" type="object" string="Iniciar" invisible="estado != 'pendiente'" class="btn-primary"/>
+                    <button name="action_completar" type="object" string="Completar" invisible="estado != 'en_progreso'" class="btn-success"/>
+                    <button name="action_cancelar" type="object" string="Cancelar" invisible="estado in ['completado', 'cancelado']" class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="conductor_id"/>
+                        <field name="taxi_id"/>
+                        <field name="tarifa_id"/>
+                        <field name="origen"/>
+                        <field name="destino"/>
+                        <field name="distancia_km"/>
+                        <field name="minutos_espera"/>
+                        <field name="precio" readonly="1"/>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

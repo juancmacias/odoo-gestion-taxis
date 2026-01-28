@@ -1,0 +1,136 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    📁 GUÍA DE IMÁGENES PARA EL MÓDULO                     ║
+║                         GESTIÓN DE TAXIS PRO                              ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ 📍 RUTA PRINCIPAL PARA GUARDAR TODAS LAS IMÁGENES:                       │
+│                                                                           │
+│    e:\odoo-19.0\addons\gestion_taxis_pro\static\description\             │
+│                                                                           │
+│ ✅ Esta carpeta ya ha sido creada automáticamente                        │
+└───────────────────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ 🖼️  IMÁGENES NECESARIAS:                                                 │
+└───────────────────────────────────────────────────────────────────────────┘
+
+1️⃣  icon.png (⚠️ OBLIGATORIO - MUY IMPORTANTE)
+   📏 Tamaño: 256x256 px o 128x128 px
+   📄 Formato: PNG con fondo transparente
+   📍 Ubicación: static\description\icon.png
+   💡 Descripción: Icono que aparece en la lista de aplicaciones
+   🎨 Sugerencia: Un icono de taxi, volante o "T" estilizada
+
+2️⃣  banner.png (Recomendado)
+   📏 Tamaño: 1200x400 px
+   📄 Formato: PNG o JPG
+   📍 Ubicación: static\description\banner.png
+   💡 Descripción: Banner superior del módulo
+   🎨 Sugerencia: Logo + nombre del módulo + imagen de taxi
+
+3️⃣  screenshot_taxis.png
+   📏 Tamaño: 1200x800 px (o captura completa)
+   📄 Formato: PNG
+   📍 Ubicación: static\description\screenshot_taxis.png
+   💡 Descripción: Captura de la vista lista de taxis
+
+4️⃣  screenshot_conductores.png
+   📏 Tamaño: 1200x800 px (o captura completa)
+   📄 Formato: PNG
+   📍 Ubicación: static\description\screenshot_conductores.png
+   💡 Descripción: Captura de la vista lista de conductores
+
+5️⃣  screenshot_tarifas.png
+   📏 Tamaño: 1200x800 px (o captura completa)
+   📄 Formato: PNG
+   📍 Ubicación: static\description\screenshot_tarifas.png
+   💡 Descripción: Captura de la vista lista de tarifas
+
+6️⃣  screenshot_viajes.png
+   📏 Tamaño: 1200x800 px (o captura completa)
+   📄 Formato: PNG
+   📍 Ubicación: static\description\screenshot_viajes.png
+   💡 Descripción: Captura de la vista lista/formulario de viajes
+
+7️⃣  footer.png (Opcional)
+   📏 Tamaño: 1200x200 px
+   📄 Formato: PNG o JPG
+   📍 Ubicación: static\description\footer.png
+   💡 Descripción: Banner inferior con logo/info de contacto
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ 📸 CÓMO TOMAR LAS CAPTURAS DE PANTALLA:                                  │
+└───────────────────────────────────────────────────────────────────────────┘
+
+   Paso 1: Instala el módulo en Odoo
+   Paso 2: Crea datos de prueba:
+           - 3-5 taxis
+           - 3-5 conductores
+           - 2-3 tarifas
+           - 4-6 viajes (con diferentes estados)
+   
+   Paso 3: Abre cada vista en Odoo
+   Paso 4: Presiona Windows + Shift + S para capturar
+           o usa la herramienta Recortes de Windows
+   
+   Paso 5: Guarda cada captura con el nombre correcto en:
+           e:\odoo-19.0\addons\gestion_taxis_pro\static\description\
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ 🎨 HERRAMIENTAS RECOMENDADAS PARA CREAR/EDITAR IMÁGENES:                │
+└───────────────────────────────────────────────────────────────────────────┘
+
+   Para el icono:
+   • Canva (https://canva.com) - Gratis y fácil
+   • Flaticon (https://flaticon.com) - Iconos gratuitos
+   • GIMP - Editor de imágenes gratis
+
+   Para capturas:
+   • Herramienta Recortes de Windows (integrada)
+   • Greenshot - Gratuita para capturas avanzadas
+   • ShareX - Gratuita y potente
+
+   Para el banner:
+   • Canva - Plantillas profesionales
+   • GIMP - Edición avanzada
+   • Paint.NET - Editor intermedio
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ ✅ ESTADO ACTUAL DEL MÓDULO:                                             │
+└───────────────────────────────────────────────────────────────────────────┘
+
+   ✅ Carpeta static/description/ creada
+   ✅ README.rst creado (documentación completa en reStructuredText)
+   ✅ README.md creado (documentación para GitHub)
+   ✅ index.html creado (vista HTML para Odoo Store)
+   ✅ __manifest__.py actualizado para cargar el README
+   ✅ Imágenes declaradas en el manifest
+   
+   ⚠️  FALTA: Agregar las imágenes físicas (PNG/JPG)
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ 🚀 PRÓXIMOS PASOS:                                                       │
+└───────────────────────────────────────────────────────────────────────────┘
+
+   1. Crear o buscar el icon.png (OBLIGATORIO)
+   2. Tomar las capturas de pantalla
+   3. (Opcional) Crear el banner.png
+   4. Guardar todas las imágenes en: static\description\
+   5. Actualizar el módulo en Odoo
+   6. ¡Listo! Tu módulo tendrá documentación profesional
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│ 📝 NOTA IMPORTANTE:                                                       │
+└───────────────────────────────────────────────────────────────────────────┘
+
+   El módulo funcionará sin las imágenes, pero se verá más profesional
+   con ellas. El icon.png es el más importante porque aparece en la lista
+   de aplicaciones de Odoo.
+
+   Si no tienes las imágenes ahora, el módulo seguirá funcionando
+   perfectamente. Puedes añadirlas más tarde.
+
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  📧 ¿Dudas? Revisa los archivos README.md o README.rst para más detalles ║
+╚═══════════════════════════════════════════════════════════════════════════╝

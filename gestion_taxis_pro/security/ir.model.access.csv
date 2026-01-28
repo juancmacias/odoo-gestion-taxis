@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_taxi,taxi.taxi,model_taxi_taxi,,1,1,1,1
+access_conductor,taxi.conductor,model_taxi_conductor,,1,1,1,1
+access_tarifa,taxi.tarifa,model_taxi_tarifa,,1,1,1,1
+access_viaje,taxi.viaje,model_taxi_viaje,,1,1,1,1

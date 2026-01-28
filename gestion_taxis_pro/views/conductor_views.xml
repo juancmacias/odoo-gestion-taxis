@@ -1,0 +1,39 @@
+
+<odoo>
+    <record id="action_conductores" model="ir.actions.act_window">
+        <field name="name">Conductores</field>
+        <field name="res_model">taxi.conductor</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_conductores" parent="menu_taxi_root" name="Conductores" action="action_conductores"/>
+
+    <record id="view_conductor_tree" model="ir.ui.view">
+        <field name="model">taxi.conductor</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="telefono"/>
+                <field name="licencia"/>
+                <field name="taxi_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_conductor_form" model="ir.ui.view">
+        <field name="model">taxi.conductor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="telefono"/>
+                        <field name="licencia"/>
+                        <field name="taxi_id"/>
+                        <field name="activo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

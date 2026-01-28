@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Viaje 1 - Completado -->
+        <record id="viaje_001" model="taxi.viaje">
+            <field name="name">VJ-001</field>
+            <field name="conductor_id" ref="conductor_001"/>
+            <field name="taxi_id" ref="taxi_001"/>
+            <field name="tarifa_id" ref="tarifa_normal"/>
+            <field name="origen">Plaza Mayor, Madrid</field>
+            <field name="destino">Aeropuerto Madrid-Barajas</field>
+            <field name="distancia_km">18.5</field>
+            <field name="minutos_espera">5</field>
+            <field name="estado">completado</field>
+            <field name="fecha_inicio" eval="(DateTime.now() - timedelta(days=2)).strftime('%Y-%m-%d 10:30:00')"/>
+            <field name="fecha_fin" eval="(DateTime.now() - timedelta(days=2)).strftime('%Y-%m-%d 11:00:00')"/>
+        </record>
+
+        <!-- Viaje 2 - Completado -->
+        <record id="viaje_002" model="taxi.viaje">
+            <field name="name">VJ-002</field>
+            <field name="conductor_id" ref="conductor_002"/>
+            <field name="taxi_id" ref="taxi_002"/>
+            <field name="tarifa_id" ref="tarifa_nocturna"/>
+            <field name="origen">Estación Atocha</field>
+            <field name="destino">Gran Vía, 45</field>
+            <field name="distancia_km">4.2</field>
+            <field name="minutos_espera">2</field>
+            <field name="estado">completado</field>
+            <field name="fecha_inicio" eval="(DateTime.now() - timedelta(days=1)).strftime('%Y-%m-%d 23:15:00')"/>
+            <field name="fecha_fin" eval="(DateTime.now() - timedelta(days=1)).strftime('%Y-%m-%d 23:35:00')"/>
+        </record>
+
+        <!-- Viaje 3 - En Progreso -->
+        <record id="viaje_003" model="taxi.viaje">
+            <field name="name">VJ-003</field>
+            <field name="conductor_id" ref="conductor_003"/>
+            <field name="taxi_id" ref="taxi_003"/>
+            <field name="tarifa_id" ref="tarifa_normal"/>
+            <field name="origen">Puerta del Sol</field>
+            <field name="destino">Parque del Retiro</field>
+            <field name="distancia_km">2.8</field>
+            <field name="minutos_espera">0</field>
+            <field name="estado">en_progreso</field>
+            <field name="fecha_inicio" eval="DateTime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+        <!-- Viaje 4 - Pendiente -->
+        <record id="viaje_004" model="taxi.viaje">
+            <field name="name">VJ-004</field>
+            <field name="conductor_id" ref="conductor_004"/>
+            <field name="taxi_id" ref="taxi_004"/>
+            <field name="tarifa_id" ref="tarifa_aeropuerto"/>
+            <field name="origen">Hotel Ritz</field>
+            <field name="destino">Aeropuerto Madrid-Barajas</field>
+            <field name="distancia_km">0</field>
+            <field name="minutos_espera">0</field>
+            <field name="estado">pendiente</field>
+        </record>
+
+        <!-- Viaje 5 - Completado (Festivo) -->
+        <record id="viaje_005" model="taxi.viaje">
+            <field name="name">VJ-005</field>
+            <field name="conductor_id" ref="conductor_001"/>
+            <field name="taxi_id" ref="taxi_001"/>
+            <field name="tarifa_id" ref="tarifa_festivos"/>
+            <field name="origen">Calle Alcalá, 100</field>
+            <field name="destino">Centro Comercial La Vaguada</field>
+            <field name="distancia_km">8.5</field>
+            <field name="minutos_espera">3</field>
+            <field name="estado">completado</field>
+            <field name="fecha_inicio" eval="(DateTime.now() - timedelta(days=7)).strftime('%Y-%m-%d 14:00:00')"/>
+            <field name="fecha_fin" eval="(DateTime.now() - timedelta(days=7)).strftime('%Y-%m-%d 14:25:00')"/>
+        </record>
+
+        <!-- Viaje 6 - Cancelado -->
+        <record id="viaje_006" model="taxi.viaje">
+            <field name="name">VJ-006</field>
+            <field name="conductor_id" ref="conductor_002"/>
+            <field name="taxi_id" ref="taxi_002"/>
+            <field name="tarifa_id" ref="tarifa_normal"/>
+            <field name="origen">Plaza de Castilla</field>
+            <field name="destino">Estadio Santiago Bernabéu</field>
+            <field name="distancia_km">0</field>
+            <field name="minutos_espera">0</field>
+            <field name="estado">cancelado</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Tarifa Normal (Día) -->
+        <record id="tarifa_normal" model="taxi.tarifa">
+            <field name="name">Tarifa Normal (Día)</field>
+            <field name="precio_base">3.50</field>
+            <field name="precio_km">1.20</field>
+            <field name="precio_min_espera">0.40</field>
+        </record>
+
+        <!-- Tarifa Nocturna -->
+        <record id="tarifa_nocturna" model="taxi.tarifa">
+            <field name="name">Tarifa Nocturna</field>
+            <field name="precio_base">4.50</field>
+            <field name="precio_km">1.50</field>
+            <field name="precio_min_espera">0.50</field>
+        </record>
+
+        <!-- Tarifa Festivos -->
+        <record id="tarifa_festivos" model="taxi.tarifa">
+            <field name="name">Tarifa Festivos/Domingos</field>
+            <field name="precio_base">4.00</field>
+            <field name="precio_km">1.35</field>
+            <field name="precio_min_espera">0.45</field>
+        </record>
+
+        <!-- Tarifa Aeropuerto -->
+        <record id="tarifa_aeropuerto" model="taxi.tarifa">
+            <field name="name">Tarifa Aeropuerto</field>
+            <field name="precio_base">5.50</field>
+            <field name="precio_km">1.60</field>
+            <field name="precio_min_espera">0.55</field>
+        </record>
+
+    </data>
+</odoo>

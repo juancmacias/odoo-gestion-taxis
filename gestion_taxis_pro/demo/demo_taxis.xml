@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Taxi 1 -->
+        <record id="taxi_001" model="taxi.taxi">
+            <field name="name">1234-ABC</field>
+            <field name="marca">Toyota</field>
+            <field name="modelo">Prius</field>
+            <field name="activo">True</field>
+        </record>
+
+        <!-- Taxi 2 -->
+        <record id="taxi_002" model="taxi.taxi">
+            <field name="name">5678-DEF</field>
+            <field name="marca">Mercedes</field>
+            <field name="modelo">E220</field>
+            <field name="activo">True</field>
+        </record>
+
+        <!-- Taxi 3 -->
+        <record id="taxi_003" model="taxi.taxi">
+            <field name="name">9012-GHI</field>
+            <field name="marca">Nissan</field>
+            <field name="modelo">Leaf</field>
+            <field name="activo">True</field>
+        </record>
+
+        <!-- Taxi 4 -->
+        <record id="taxi_004" model="taxi.taxi">
+            <field name="name">3456-JKL</field>
+            <field name="marca">Seat</field>
+            <field name="modelo">León</field>
+            <field name="activo">True</field>
+        </record>
+
+        <!-- Taxi 5 (Inactivo) -->
+        <record id="taxi_005" model="taxi.taxi">
+            <field name="name">7890-MNO</field>
+            <field name="marca">Volkswagen</field>
+            <field name="modelo">Passat</field>
+            <field name="activo">False</field>
+        </record>
+
+    </data>
+</odoo>

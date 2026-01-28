@@ -1,0 +1,38 @@
+
+<odoo>
+    <record id="action_taxis" model="ir.actions.act_window">
+        <field name="name">Taxis</field>
+        <field name="res_model">taxi.taxi</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_taxis" parent="menu_taxi_root" name="Taxis" action="action_taxis"/>
+
+    <record id="view_taxi_tree" model="ir.ui.view">
+        <field name="model">taxi.taxi</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="marca"/>
+                <field name="modelo"/>
+                <field name="activo"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_taxi_form" model="ir.ui.view">
+        <field name="model">taxi.taxi</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="marca"/>
+                        <field name="modelo"/>
+                        <field name="activo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
