@@ -42,6 +42,16 @@
     'website': 'https://www.juancarlosmacias.es',
     'support': 'juancarlosmaciassalvador@gmail.com',
     "icon": "/word_search_gamification/static/description/icon.png",
+    # Images for store
+    "images": [
+        "static/description/banner.png",
+        "static/description/juegos.png",
+        "static/description/juegos_finalizados.png",
+        "static/description/partida.png",
+        "static/description/palabras.png",
+        "static/description/resumen_jugador.png",
+        "static/description/perfil_jugador.png",
+    ],
     "depends": ["base", "hr", "web", "website"],
     "data": [
         "security/ir.model.access.csv",
