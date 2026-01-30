@@ -15,6 +15,8 @@ Sistema completo para la gestión de flotas de taxis, conductores, tarifas y via
 ### 🎮 Word Search Gamification
 Módulo de gamificación con juego de sopa de letras interactivo, tabla de clasificación y gestión de intentos
 
+📖 **Documentación completa**: [Ver artículo](https://juancarlosmacias.es/article/odoo-word-search-gamification)
+
 ## Instalación
 
 ```bash
