@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view for word.search.word -->
+    <record id="view_word_search_word_form" model="ir.ui.view">
+        <field name="name">word.search.word.form</field>
+        <field name="model">word.search.word</field>
+        <field name="arch" type="xml">
+            <form string="Word">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="word"/>
+                            <field name="category"/>
+                        </group>
+                        <group>
+                            <field name="language"/>
+                            <field name="difficulty"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for word.search.word -->
+    <record id="view_word_search_word_tree" model="ir.ui.view">
+        <field name="name">word.search.word.tree</field>
+        <field name="model">word.search.word</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="word"/>
+                <field name="category"/>
+                <field name="language"/>
+                <field name="difficulty"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Search view for word.search.word -->
+    <record id="view_word_search_word_search" model="ir.ui.view">
+        <field name="name">word.search.word.search</field>
+        <field name="model">word.search.word</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="word"/>
+                <field name="category"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="Category" name="group_category" context="{'group_by': 'category'}"/>
+                <filter string="Language" name="group_language" context="{'group_by': 'language'}"/>
+                <filter string="Difficulty" name="group_difficulty" context="{'group_by': 'difficulty'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for word.search.word -->
+    <record id="action_word_search_word" model="ir.actions.act_window">
+        <field name="name">Words</field>
+        <field name="res_model">word.search.word</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first word!
+            </p>
+            <p>
+                Add words that will be used in the word search games.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item for Words -->
+    <menuitem id="menu_word_search_words" 
+              name="Words" 
+              parent="menu_word_search_root" 
+              action="action_word_search_word"
+              sequence="10"/>
+</odoo>

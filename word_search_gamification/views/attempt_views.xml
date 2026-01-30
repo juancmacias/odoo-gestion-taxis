@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view for word.search.attempt -->
+    <record id="view_word_search_attempt_form" model="ir.ui.view">
+        <field name="name">word.search.attempt.form</field>
+        <field name="model">word.search.attempt</field>
+        <field name="arch" type="xml">
+            <form string="Attempt" create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="game_id"/>
+                            <field name="played_at"/>
+                        </group>
+                        <group>
+                            <field name="time_spent" widget="float_time"/>
+                            <field name="score"/>
+                            <field name="completed"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="found_words_json"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for word.search.attempt -->
+    <record id="view_word_search_attempt_tree" model="ir.ui.view">
+        <field name="name">word.search.attempt.tree</field>
+        <field name="model">word.search.attempt</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="user_id"/>
+                <field name="game_id"/>
+                <field name="time_spent" widget="float_time"/>
+                <field name="score"/>
+                <field name="completed"/>
+                <field name="played_at"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Search view for word.search.attempt -->
+    <record id="view_word_search_attempt_search" model="ir.ui.view">
+        <field name="name">word.search.attempt.search</field>
+        <field name="model">word.search.attempt</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+                <field name="game_id"/>
+                <separator/>
+                <filter string="Completed" name="completed" domain="[('completed', '=', True)]"/>
+                <filter string="Incomplete" name="incomplete" domain="[('completed', '=', False)]"/>
+                <filter string="My Attempts" name="my_attempts" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Player" name="group_user" context="{'group_by': 'user_id'}"/>
+                <filter string="Game" name="group_game" context="{'group_by': 'game_id'}"/>
+                <filter string="Played Date" name="group_date" context="{'group_by': 'played_at:day'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for word.search.attempt -->
+    <record id="action_word_search_attempt" model="ir.actions.act_window">
+        <field name="name">Attempts</field>
+        <field name="res_model">word.search.attempt</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_my_attempts': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No attempts yet
+            </p>
+            <p>
+                Game attempts will appear here once players start playing.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item for Attempts -->
+    <menuitem id="menu_word_search_attempts" 
+              name="Attempts" 
+              parent="menu_word_search_root" 
+              action="action_word_search_attempt"
+              sequence="20"/>
+</odoo>

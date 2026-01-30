@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view for word.search.leaderboard -->
+    <record id="view_word_search_leaderboard_form" model="ir.ui.view">
+        <field name="name">word.search.leaderboard.form</field>
+        <field name="model">word.search.leaderboard</field>
+        <field name="arch" type="xml">
+            <form string="Leaderboard" create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="total_score"/>
+                            <field name="games_played"/>
+                        </group>
+                        <group>
+                            <field name="best_time" widget="float_time"/>
+                            <field name="last_played"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for word.search.leaderboard -->
+    <record id="view_word_search_leaderboard_tree" model="ir.ui.view">
+        <field name="name">word.search.leaderboard.tree</field>
+        <field name="model">word.search.leaderboard</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false" decoration-success="total_score &gt;= 1000" decoration-info="total_score &gt;= 500 and total_score &lt; 1000">
+                <field name="user_id"/>
+                <field name="total_score"/>
+                <field name="games_played"/>
+                <field name="best_time" widget="float_time"/>
+                <field name="last_played"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Search view for word.search.leaderboard -->
+    <record id="view_word_search_leaderboard_search" model="ir.ui.view">
+        <field name="name">word.search.leaderboard.search</field>
+        <field name="model">word.search.leaderboard</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+                <separator/>
+                <filter string="Top Performers" name="top_performers" domain="[('total_score', '&gt;=', 500)]"/>
+                <separator/>
+                <filter string="User" name="group_user" context="{'group_by': 'user_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for word.search.leaderboard -->
+    <record id="action_word_search_leaderboard" model="ir.actions.act_window">
+        <field name="name">Leaderboard</field>
+        <field name="res_model">word.search.leaderboard</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No leaderboard entries yet
+            </p>
+            <p>
+                The leaderboard will show player rankings once games are played.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item for Leaderboard -->
+    <menuitem id="menu_word_search_leaderboard" 
+              name="Leaderboard" 
+              parent="menu_word_search_root" 
+              action="action_word_search_leaderboard"
+              sequence="30"/>
+</odoo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_word_search_game_form" model="ir.ui.view">
+        <field name="name">word.search.game.form</field>
+        <field name="model">word.search.game</field>
+        <field name="arch" type="xml">
+            <form string="Word Search Game">
+                <header>
+                    <button name="action_play_game" string="🎮 Play Game" type="object" 
+                            class="oe_highlight" invisible="state != 'active'"/>
+                    <button name="action_activate" string="Activate" type="object" 
+                            invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_archive" string="Archive" type="object" 
+                            invisible="state != 'active'"/>
+                    <button name="action_set_to_draft" string="Set to Draft" type="object" 
+                            invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,archived"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Game Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="theme"/>
+                            <field name="difficulty"/>
+                            <field name="grid_size"/>
+                            <field name="language"/>
+                        </group>
+                        <group>
+                            <field name="active_from"/>
+                            <field name="active_until"/>
+                            <field name="active"/>
+                            <field name="total_attempts"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" placeholder="Game description..."/>
+                        </page>
+                        <page string="Words">
+                            <field name="word_ids" widget="many2many"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_word_search_game_tree" model="ir.ui.view">
+        <field name="name">word.search.game.tree</field>
+        <field name="model">word.search.game</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'archived'" decoration-bf="state == 'active'">
+                <field name="name"/>
+                <field name="theme"/>
+                <field name="difficulty"/>
+                <field name="grid_size"/>
+                <field name="state"/>
+                <field name="total_attempts"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_word_search_game_search" model="ir.ui.view">
+        <field name="name">word.search.game.search</field>
+        <field name="model">word.search.game</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="theme"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="Draft" name="state_draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Active Games" name="state_active" domain="[('state', '=', 'active')]"/>
+                <separator/>
+                <filter string="Difficulty" name="group_difficulty" context="{'group_by': 'difficulty'}"/>
+                <filter string="State" name="group_state" context="{'group_by': 'state'}"/>
+                <filter string="Language" name="group_language" context="{'group_by': 'language'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_word_search_game" model="ir.actions.act_window">
+        <field name="name">Word Search Games</field>
+        <field name="res_model">word.search.game</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Word Search Game!
+            </p>
+            <p>
+                Design engaging word search games for your team with customizable difficulty levels.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_word_search_root" name="Gamification" sequence="100"/>
+    <menuitem id="menu_word_search_games" 
+              name="Games" 
+              parent="menu_word_search_root" 
+              action="action_word_search_game"
+              sequence="5"/>
+</odoo>

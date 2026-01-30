@@ -1,0 +1,26 @@
+.word-search-game {
+    padding: 20px;
+    font-family: Inter, sans-serif;
+}
+
+.grid {
+    display: grid;
+    gap: 4px;
+}
+
+.cell {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #f5f7fb;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cell:hover {
+    background: #7c7cff;
+    color: white;
+}

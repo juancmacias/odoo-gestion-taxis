@@ -1,0 +1,23 @@
+<templates>
+    <t t-name="word_search_game_template">
+        <div class="word-search-game">
+            <h3>Word Search</h3>
+
+            <div class="grid">
+                <t t-foreach="state.grid" t-as="row">
+                    <div class="row">
+                        <t t-foreach="row" t-as="cell">
+                            <div class="cell" t-on-click="() => selectCell(cell)">
+                                <t t-esc="cell"/>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </div>
+
+            <div class="timer">
+                Time: <t t-esc="state.time"/>s
+            </div>
+        </div>
+    </t>
+</templates>

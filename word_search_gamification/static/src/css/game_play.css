@@ -1,0 +1,159 @@
+/* Word Search Game Styles */
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+.word-search-grid {
+    display: inline-block;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.grid-row {
+    display: flex;
+    line-height: 1;
+}
+
+.grid-cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.grid-cell:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.grid-cell.selected {
+    background: #4CAF50;
+    color: white;
+    border-color: #45a049;
+}
+
+.grid-cell.found {
+    background: #2196F3;
+    color: white;
+    border-color: #0b7dda;
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Words List */
+.word-item {
+    transition: all 0.3s ease;
+}
+
+.word-item.found {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.word-item .badge {
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #ddd;
+}
+
+.word-item.found .badge {
+    background: #4CAF50 !important;
+    color: white !important;
+    border-color: #45a049;
+}
+
+/* Timer Animation */
+#timer {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Score Animation */
+#score {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-cell {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .game-container {
+        padding: 10px;
+    }
+}
+
+/* Success Message */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.success-message {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.success-message h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.success-message .stats {
+    font-size: 18px;
+    margin: 10px 0;
+}

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_game_user,access_game_user,model_word_search_game,base.group_user,1,1,1,1
+access_word_user,access_word_user,model_word_search_word,base.group_user,1,1,1,1
+access_attempt_user,access_attempt_user,model_word_search_attempt,base.group_user,1,1,1,0
+access_leaderboard_user,access_leaderboard_user,model_word_search_leaderboard,base.group_user,1,1,1,0
