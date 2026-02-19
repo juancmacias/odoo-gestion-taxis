@@ -29,7 +29,7 @@
     Documentación completa: https://juancarlosmacias.es/article/modulo-de-gestion-de-flotas-de-taxis-con-odoo
     """,
     'author': 'Juan Carlos Macías',
-    'website': 'https://www.juancarlosmacias.es',
+    'website': 'https://www.juancarlosmacias.es/article/modulo-de-gestion-de-flotas-de-taxis-con-odoo',
     'support': 'juancarlosmaciassalvador@gmail.com',
     
     # Pricing for Odoo Apps Store
